@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.inpi.api.model.Recuperacao;
 
 @Repository
-public interface RecuperacaoRepository extends JpaRepository<Recuperacao, Long>{
+public interface RecuperacaoRepository extends JpaRepository<Recuperacao, Integer>{
 
 }

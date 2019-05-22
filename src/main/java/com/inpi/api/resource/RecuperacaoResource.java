@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,7 +21,7 @@ public class RecuperacaoResource {
 	@Autowired
 	RecuperacaoService recuperacaoService;
 	
-	@RequestMapping(method = RequestMethod.POST)
+	@PostMapping
 	public ResponseEntity<Recuperacao> salvar(@RequestBody Recuperacao recuperacao){
 		
 		recuperacao = recuperacaoService.salvar(recuperacao);	
@@ -30,17 +31,17 @@ public class RecuperacaoResource {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<?> buscar(@PathVariable ("id") Long id) {
+	public ResponseEntity<Recuperacao> buscar(@PathVariable ("id") Long id) {
 		
-		Recuperacao recuperacao = null;
+		// Recuperacao recuperacao = null;
 		
-		try {
-			recuperacao = recuperacaoService.buscar(id).get();
+		// try {
+			Recuperacao recuperacao = recuperacaoService.buscar(id).get();
 			
-		} catch (GruNaoEncontradaException e) {
+		// } catch (GruNaoEncontradaException e) {
 			// TODO Auto-generated catch block
-			return ResponseEntity.notFound().build();
-		}
+		//	return ResponseEntity.notFound().build();
+		 //}
 		
 		
 		return ResponseEntity.status(HttpStatus.OK).body(recuperacao);

@@ -24,10 +24,10 @@ public class RecuperacaoService {
 		
 		Optional<Recuperacao> recuperacao = recuperacaoRepository.findById(id);
 		
-		if(recuperacao == null) {
+		// if(recuperacao == null) {
 			
-			throw new GruNaoEncontradaException("A GRU nao corresponde a serviço de deposito de DI");
-		}
+		//	throw new GruNaoEncontradaException("A GRU nao corresponde a serviço de deposito de DI");
+		// }
 		
 		return recuperacao;
 	}

@@ -28,8 +28,8 @@ public class Recuperacao implements Serializable{
 	private static final long serialVersionUID = 4885256012292980114L;
 	
 	@Id 
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	
 	@Column(name = "nu_gru", length = 30, nullable = false)
 	private String nu_Gru;
