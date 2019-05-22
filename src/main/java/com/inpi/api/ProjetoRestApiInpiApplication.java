@@ -10,9 +10,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-@EntityScan(basePackages = {"com.inpi.model"})
+@EntityScan(basePackages = {"com.inpi.api.model"})
 @ComponentScan(basePackages = {"com.*"})
-@EnableJpaRepositories(basePackages = {"com.inpi.repository"})
+@EnableJpaRepositories(basePackages = {"com.inpi.api.repository"})
 @EnableTransactionManagement
 @EnableWebMvc
 @RestController
