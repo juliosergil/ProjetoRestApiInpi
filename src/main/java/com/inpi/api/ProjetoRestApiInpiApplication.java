@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+@SpringBootApplication
 @EntityScan(basePackages = {"com.inpi.api.model"})
 @ComponentScan(basePackages = {"com.*"})
 @EnableJpaRepositories(basePackages = {"com.inpi.api.repository"})
@@ -17,7 +18,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableWebMvc
 @RestController
 @EnableAutoConfiguration
-@SpringBootApplication
 public class ProjetoRestApiInpiApplication {
 
 	public static void main(String[] args) {

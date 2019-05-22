@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,6 +45,13 @@ public class Recuperacao implements Serializable{
 	
 	@Column(name = "nm_login", length = 30, nullable = false)
 	private String nm_Login;
+	
+	@PrePersist
+	public void Prepersist() {
+		
+		final Date dataRec = new Date();
+		datCadastro = dataRec;
+	}
 
 	@Override
 	public String toString() {
